@@ -13,6 +13,14 @@ namespace MathGame
             };
             Game.Game fizzBuzz = new Game.Game(1, 100, rules);
             fizzBuzz.RunGame();
+
+            List<Game.Rules> newRules = new List<Game.Rules> 
+            {
+                new Game.Rules("Fuzz", 4),
+                new Game.Rules("Jazz", 9)
+            };
+            Game.Game jazzFuzz = new Game.Game(1, 100, newRules);
+            jazzFuzz.RunReversedGame();
         }
     }
 }

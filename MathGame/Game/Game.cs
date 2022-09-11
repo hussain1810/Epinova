@@ -38,6 +38,27 @@ namespace MathGame.Game
             }
         }
 
+        public void RunReversedGame() 
+        {
+            for (int i = totalNumbers; i >= startCount; i--)
+            {
+                string output = "";
+
+                foreach (var rule in rules) 
+                {
+                    if (CheckRule(i, rule.number))
+                    {
+                        output += rule.name;
+                    }
+                }
+
+                if (output.Length == 0)
+                    Console.WriteLine(i);
+                else
+                    Console.WriteLine(output);
+            }
+        }
+
         private bool CheckRule(int number, int numberToCheckAgainst)
         {
             if (number % numberToCheckAgainst == 0)
