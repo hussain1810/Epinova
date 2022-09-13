@@ -1,4 +1,4 @@
-﻿using System;
+﻿using MathGame.Game;
 
 namespace MathGame
 {
@@ -6,13 +6,27 @@ namespace MathGame
     {
         public static void Main(string[] args) 
         {
-            List<Game.Rules> rules = new List<Game.Rules> 
+            List<Rules> rules = new List<Rules> 
             {
-                new Game.Rules("Fizz", 3),
-                new Game.Rules("Buzz", 5)
+                new Rules("Fizz", 3),
+                new Rules("Buzz", 5)
             };
-            Game.Game fizzBuzz = new Game.Game(1, 100, rules);
-            fizzBuzz.RunGame();
+            GameLogic fizzBuzz = new GameLogic(1, 100, rules);
+            foreach (var result in fizzBuzz.RunGame())
+            {
+                Console.WriteLine(result);
+            }
+            
+            List<Rules> newRules = new List<Rules> 
+            {
+                new Rules("Fuzz", 4),
+                new Rules("Jazz", 9)
+            };
+            GameLogic jazzFuzz = new GameLogic(100, 1, newRules);
+            foreach (var result in jazzFuzz.RunGame())
+            {
+                Console.WriteLine(result);
+            }
         }
     }
 }
