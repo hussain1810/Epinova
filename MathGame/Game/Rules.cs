@@ -1,18 +1,19 @@
-using System;
-
 namespace MathGame.Game 
 {
     class Rules 
     {
-        public string name;
-        public int number;
+        private string _name;
+        private int _number;
 
         public Rules(
             string name,
             int number
         ){
-            this.name = name;
-            this.number = number;
+            _name = name;
+            _number = number;
         }
+
+        public string Name { get => _name; }
+        public int Number { get => _number; }
     }
 }
